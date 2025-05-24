@@ -42,6 +42,8 @@ const login = async (req, res, next) => {
 
         setAuthToken(res, user._id);
 
+        // console.log("Res:==> ", res);
+
         res.status(200).json(successResponse({ status: 200, message: 'Logged in successfully' }));
     } catch (err) {
         next(err);

@@ -14,8 +14,15 @@ const getUserById = async (id) => {
     return userRepo.findById(id);
 };
 
+const addPollToHistory = async (userId, pollId) => {
+    return userRepo.updateById(userId, {
+        $push: { history: { pollId } }
+    });
+};
+
 module.exports = {
     createUser,
     getUserByEmail,
     getUserById,
+    addPollToHistory
 };
