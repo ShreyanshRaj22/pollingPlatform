@@ -16,9 +16,10 @@ const getUserById = async (id) => {
 
 const addPollToHistory = async (userId, pollId) => {
     return userRepo.updateById(userId, {
-        $push: { history: { pollId } }
+        $addToSet: { history: { pollId } }
     });
 };
+
 
 module.exports = {
     createUser,
