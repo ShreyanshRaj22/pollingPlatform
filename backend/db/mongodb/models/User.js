@@ -6,6 +6,10 @@ const HistorySchema = new mongoose.Schema({
         ref: 'Poll',
         required: true,
     },
+    optionId: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+    },
     votedAt: {
         type: Date,
         default: Date.now,

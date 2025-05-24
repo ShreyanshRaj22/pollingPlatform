@@ -1,5 +1,4 @@
 const { createPoll, getAllPolls, getPollById, updatePoll, deletePoll } = require('../db/data-providers/poll.provider');
-const { addPollToHistory } = require("../db/data-providers/user.provider");
 const { successResponse } = require('../helpers/responseWrapper');
 
 const createNewPoll = async (req, res, next) => {
@@ -13,7 +12,6 @@ const createNewPoll = async (req, res, next) => {
             return { text, votes: 0 };
         });
         const poll = await createPoll({ title, description, options: formattedOptions, ownerId: req.user.id, settledAt });
-        await addPollToHistory(req.user.id, poll._id);
         res.status(201).json(successResponse({ status: 201, message: 'Poll created', data: poll }));
     } catch (err) {
         next(err);

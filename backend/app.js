@@ -20,8 +20,9 @@ app.use(cookieParser());
 
 const io = new Server(server, {
     cors: {
-        origin: '*',
-        methods: ['GET', 'POST']
+        origin: 'http://localhost:5500',
+        methods: ['GET', 'POST'],
+        credentials: true
     }
 });
 
