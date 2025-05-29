@@ -1,16 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// import HomePage from './pages/HomePage';
-// import LoginPage from './pages/LoginPage';
-// import PollPage from './pages/PollPage';
+import HomePage from './pages/HomePage/HomePage';
 
 function App() {
     return (
         <Router>
             <Routes>
-                {/* <Route path="/" element={<HomePage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/poll/:pollId" element={<PollPage />} /> */}
+                <Route path="/" element={<HomePage />} />
             </Routes>
         </Router>
     );
