@@ -9,6 +9,7 @@
     transition: width 0.3s ease-in-out;
     z-index: 50;
     border-right: 1px solid #e8e8e8;
+    background-color: white;
 }
 
 .sidebar:hover {
